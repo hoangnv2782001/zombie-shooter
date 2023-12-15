@@ -63,13 +63,13 @@ def draw_text(screen, font, text, text_col, x, y):
 
 class Info:
     def __init__(self, screen):
-        self.font = pygame.font.Font('../font/gamecuben.ttf', 30)
-        self.font1 = pygame.font.Font('../font/gamecuben.ttf', 20)
+        self.font = pygame.font.Font('font/gamecuben.ttf', 30)
+        self.font1 = pygame.font.Font('font/gamecuben.ttf', 20)
         self.screen = screen
         self.width = screen.get_width()
         self.height = screen.get_height()
-        self.background = pygame.image.load('../Elements/maps_table.jpg')
-        self.button = Button1(450, 530, pygame.image.load('../Elements/Button_exit.png'), 1)
+        self.background = pygame.image.load('Elements/maps_table.jpg')
+        self.button = Button1(450, 530, pygame.image.load('Elements/Button_exit.png'), 1)
 
     def draw(self):
         while True:
@@ -97,12 +97,12 @@ class Info:
 
 class Guide:
     def __init__(self, screen):
-        self.font = pygame.font.Font('../font/gamecuben.ttf', 30)
-        self.font1 = pygame.font.Font('../font/gamecuben.ttf', 20)
+        self.font = pygame.font.Font('font/gamecuben.ttf', 30)
+        self.font1 = pygame.font.Font('font/gamecuben.ttf', 20)
         self.screen = screen
         self.width = screen.get_width()
         self.height = screen.get_height()
-        self.button = Button1(450, 530, pygame.image.load('../Elements/Button_exit.png'), 1)
+        self.button = Button1(450, 530, pygame.image.load('Elements/Button_exit.png'), 1)
 
 
     def draw(self):

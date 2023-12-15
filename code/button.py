@@ -7,7 +7,7 @@ Button là class để tạo các nut bấm điều khiển
 Button1 là class dùng để tạo các nut bấm có hình ảnh 
 '''
 pygame.init()
-font = pygame.font.Font('../font/gamecuben.ttf', 20)
+font = pygame.font.Font('font/gamecuben.ttf', 20)
 # các màu đc sử dụng
 bg = (204, 102, 0)
 red = (255, 0, 0)

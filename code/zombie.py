@@ -13,13 +13,13 @@ info_zombie = {'zombie1': [10, 5, 1, 1, 5], 'zombie2': [7, 3, 3, 5, 4], 'zombie3
                'zombie4': [6, 5, 2, 1, 2], 'zombie5': [9, 4, 2, 1, 1]}
 
 # Đọc các hoạt ảnh của zombie và lưu vào trong từ điển info_zombie
-for i in os.listdir('../zombie'):
+for i in os.listdir('zombie'):
     animation = {}
-    for j in os.listdir(f'../zombie/{i}'):
+    for j in os.listdir(f'zombie/{i}'):
         arr = []
         scale = info_zombie[str(i)][3]
-        for action in os.listdir(f'../zombie/{i}/{j}'):
-            image = pygame.image.load(f'../zombie/{i}/{j}/{action}')
+        for action in os.listdir(f'zombie/{i}/{j}'):
+            image = pygame.image.load(f'zombie/{i}/{j}/{action}')
             image = pygame.transform.scale(image,
                                            (image.get_width() // scale, image.get_height() // scale))
             image = pygame.transform.flip(image, True, False)

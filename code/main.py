@@ -25,21 +25,21 @@ screen_width = 1000
 screen_height = 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('Zombie Shooter')
-pygame.display.set_icon(pygame.image.load('../Character Sprites/attack/gun/Shot_000.png').convert_alpha())
+pygame.display.set_icon(pygame.image.load('Character Sprites/attack/gun/Shot_000.png').convert_alpha())
 clock = pygame.time.Clock()
 
 # khởi tạo font chũ và 1 số hình ảnh để hiển thị như bom , coin , zombie
-font = pygame.font.Font('../font/gamecuben.ttf', 20)
-bomb = pygame.image.load('../graphics/bom.png')
+font = pygame.font.Font('font/gamecuben.ttf', 20)
+bomb = pygame.image.load('graphics/bom.png')
 bomb = pygame.transform.scale(bomb, (bomb.get_width() // 5, bomb.get_height() // 5))
-coin = pygame.transform.scale(pygame.image.load('../Elements/Coin/Coin_0000000.png').convert_alpha(), (50, 50))
-zombie = pygame.transform.scale(pygame.image.load('../Elements/zombie_head.png').convert_alpha(), (50, 50))
+coin = pygame.transform.scale(pygame.image.load('Elements/Coin/Coin_0000000.png').convert_alpha(), (50, 50))
+zombie = pygame.transform.scale(pygame.image.load('Elements/zombie_head.png').convert_alpha(), (50, 50))
 
 # Đọc hình ảnh của các loại đạn và lưu trong list bullet_icon
 bullet_icon = []
-for i in os.listdir('../Elements/bullet'):
-    for j in os.listdir(f'../Elements/bullet/{i}'):
-        image = pygame.image.load(f"../Elements/bullet/{i}/{j}")
+for i in os.listdir('Elements/bullet'):
+    for j in os.listdir(f'Elements/bullet/{i}'):
+        image = pygame.image.load(f"Elements/bullet/{i}/{j}")
         image = pygame.transform.scale(image, (image.get_width() // 5, image.get_height() // 5))
         bullet_icon.append(image)
         break
@@ -63,7 +63,7 @@ class Game:
 
         # backgrond cho menu tạo hiệu ứng chạy cho màn hình
         self.kill_zombie = 0
-        self.image_bg = pygame.image.load('../graphics/background.jpg').convert_alpha()
+        self.image_bg = pygame.image.load('graphics/background.jpg').convert_alpha()
         self.image_bg1 = pygame.transform.scale(self.image_bg, (screen_width, screen_height))
         self.image_bg2 = pygame.transform.scale(self.image_bg, (screen_width, screen_height))
 
@@ -104,10 +104,10 @@ class Game:
         self.posItem = [0, 100]  
 
         # âm thanh game
-        music = pygame.mixer.Sound('../audio/bensound-epic.mp3')
+        music = pygame.mixer.Sound('audio/bensound-epic.mp3')
         music.set_volume(0.03)
         music.play(loops=-1)
-        self.explosion_sound = pygame.mixer.Sound('../audio/explosion.wav')
+        self.explosion_sound = pygame.mixer.Sound('audio/explosion.wav')
         self.explosion_sound.set_volume(0.1)
 
         #  cai dat hieu ung load game, hiển thị các thông tin như info và guide
@@ -354,7 +354,7 @@ class Game:
         Hiển thị thông victory message lên màn hình
         :return:
         """
-        font = pygame.font.Font('../font/gamecuben.ttf', 50)
+        font = pygame.font.Font('font/gamecuben.ttf', 50)
         victory_surf = font.render('You Win', True, 'red')
         victory_rect = victory_surf.get_rect(center=(screen_width / 2, screen_height / 2))
         screen.blit(victory_surf, victory_rect)

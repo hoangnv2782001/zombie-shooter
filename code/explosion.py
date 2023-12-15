@@ -8,16 +8,16 @@ class explosion dùng để tạo các hoạt ảnh nổ tung trong game
 explosion = {}
 
 #Đọc các khung ảnh của 1 animation vào trong một list xong lưu các list đó vào trong từ điển explosion
-for i in os.listdir('../explosion'):
+for i in os.listdir('explosion'):
     list = []
-    for j in os.listdir(f'../explosion/{i}'):
-        image = pygame.image.load(f'../explosion/{i}/{j}')
+    for j in os.listdir(f'explosion/{i}'):
+        image = pygame.image.load(f'explosion/{i}/{j}')
         if str(i) == 'bullet': 
             list.append(pygame.transform.scale(image,(image.get_width()//10,image.get_height()//10)))
         elif str(i)=='rocket': 
             list.append(pygame.transform.scale(image,(image.get_width()//3,image.get_height()//3)))
         else:                  
-            list.append(pygame.image.load(f'../explosion/{i}/{j}'))
+            list.append(pygame.image.load(f'explosion/{i}/{j}'))
     explosion[str(i)]=list
 
 class Explosion(pygame.sprite.Sprite):

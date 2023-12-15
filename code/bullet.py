@@ -13,10 +13,10 @@ Class Bullet dùng để tạo các đối tượng đạn khi nhân vật bắn
 cartridge_box = {'bullet1': [-10, 2, 100], 'bullet2': [-10, 3, 100], 'Rockets': [-5, 7, 150], 'sword': [-10, 1, 100]}
 
 # Đọc các hình ảnh của loại đạn và lưu vào trong list thông tin loại đạn trong từ điển cartridge_box
-for i in os.listdir('../Elements/bullet'):
+for i in os.listdir('Elements/bullet'):
     list = []
-    for j in os.listdir(f'../Elements/bullet/{i}'):
-        image = pygame.image.load(f'../Elements/bullet/{i}/{j}')  
+    for j in os.listdir(f'Elements/bullet/{i}'):
+        image = pygame.image.load(f'Elements/bullet/{i}/{j}')  
         image = pygame.transform.scale(image, (image.get_width() // 5, image.get_height() // 5))  
         list.append(image)  
     cartridge_box[str(i)].append(list)  

@@ -10,19 +10,19 @@ Bomb là class dùng để tạo đối tượng bomb đây là vật phầm m�
 Coin là class tạo các đổi tượng coin . Coin sẽ rơi ra khi ta tiêu diệt zombie
 '''
 
-image_hp = pygame.image.load('../graphics/hp.png')
+image_hp = pygame.image.load('graphics/hp.png')
 image_hp = pygame.transform.scale(image_hp, (image_hp.get_width() // 10, image_hp.get_height() // 10))
-image_mp = pygame.image.load('../graphics/mp.png')
+image_mp = pygame.image.load('graphics/mp.png')
 image_mp = pygame.transform.scale(image_mp, (image_mp.get_width() // 10, image_mp.get_height() // 10))
-image_bom = pygame.image.load('../graphics/bom.png')
+image_bom = pygame.image.load('graphics/bom.png')
 image_bom = pygame.transform.scale(image_bom, (image_bom.get_width() // 5, image_bom.get_height() // 5))
 
 G = 0.25  # gia tôc rơi
 
 # Lưu các khung ảnh của animation vào coin_list
 coin_list = []
-for i in os.listdir('../Elements/Coin'):
-    image = pygame.image.load(f"../Elements/Coin/{i}")
+for i in os.listdir('Elements/Coin'):
+    image = pygame.image.load(f"Elements/Coin/{i}")
     image = pygame.transform.scale(image, (image.get_width() // 5, image.get_height() // 5))
     coin_list.append(image)
 

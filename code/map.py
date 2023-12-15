@@ -16,10 +16,10 @@ class Map:
     def __init__(self):
         self.maps = {}
         # Đọc các hình ảnh của từng map và lưu vào trong từ điển maps
-        for i in os.listdir('../map'):
+        for i in os.listdir('map'):
             arr = []
-            for j in os.listdir(f'../map/{i}'):
-                arr.append(pygame.image.load(f'../map/{i}/{j}'))
+            for j in os.listdir(f'map/{i}'):
+                arr.append(pygame.image.load(f'map/{i}/{j}'))
             self.maps[str(i)] = arr
         for image in self.maps.values():
             self.tranfom(image)

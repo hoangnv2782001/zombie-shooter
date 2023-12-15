@@ -16,10 +16,10 @@ Từ điển weapom lưu chũ các list chưa  thông tin về vũ khí gồm
 
 weapon = {'sword': [20], 'gun': [30]}
 # Đọc các khung ảnh của animation tấn công và lưu vào weapon
-for i in os.listdir('../Character Sprites/attack'):
+for i in os.listdir('Character Sprites/attack'):
     list = []
-    for j in os.listdir(f'../Character Sprites/attack/{i}'):
-        file = f'../Character Sprites/attack/{i}/{j}'
+    for j in os.listdir(f'Character Sprites/attack/{i}'):
+        file = f'Character Sprites/attack/{i}/{j}'
         list.append(pygame.transform.scale(pygame.image.load(file), (110, 110)))
     weapon[str(i)].append(list)
 
@@ -87,9 +87,9 @@ class Player(pygame.sprite.Sprite):
         self.rocket = pygame.sprite.Group()
         self.bullets = pygame.sprite.Group()
         self.rocket = pygame.sprite.GroupSingle()
-        self.laser_sound = pygame.mixer.Sound('../audio/laser.wav')
+        self.laser_sound = pygame.mixer.Sound('audio/laser.wav')
         self.laser_sound.set_volume(0.05)
-        self.font = pygame.font.Font('../font/gamecuben.ttf', 20)
+        self.font = pygame.font.Font('font/gamecuben.ttf', 20)
 
     def set_active(self):
         """
@@ -307,10 +307,10 @@ class Player(pygame.sprite.Sprite):
         lưu các khng ảnh của các animation vào từ điển animation
         :return:
         """
-        for f in os.listdir('../Character Sprites/animation'):
+        for f in os.listdir('Character Sprites/animation'):
             list = []
-            for i in os.listdir(f'../Character Sprites/animation/{f}'):
-                file = f'../Character Sprites/animation/{f}/{i}'
+            for i in os.listdir(f'Character Sprites/animation/{f}'):
+                file = f'Character Sprites/animation/{f}/{i}'
                 list.append(pygame.transform.scale(pygame.image.load(file).convert_alpha(), (110, 110)))
             self.animation_dic[str(f)] = list
 
@@ -323,8 +323,8 @@ class Weapon_icon(pygame.sprite.Sprite):
         """
         pygame.sprite.Sprite.__init__(self)
         # Đọc hình ảnh của gun và sword
-        gun = pygame.transform.scale(pygame.image.load('../Elements/weapon/image-01.png'), (125, 60))
-        sword = pygame.transform.scale(pygame.image.load('../Elements/weapon/sword.png'), (147, 40))
+        gun = pygame.transform.scale(pygame.image.load('Elements/weapon/image-01.png'), (125, 60))
+        sword = pygame.transform.scale(pygame.image.load('Elements/weapon/sword.png'), (147, 40))
         self.weapons = {'gun': gun, 'sword': sword}  
         self.weapon = weapon
         self.image = self.weapons[self.weapon]
@@ -342,8 +342,8 @@ class Weapon_icon(pygame.sprite.Sprite):
 Đọc các khung ảnh của animation Helicopter lưu vào trong list animation
 '''
 animation = []
-for i in os.listdir('../maybay'):
-    image = pygame.image.load(f"../maybay/{i}")
+for i in os.listdir('maybay'):
+    image = pygame.image.load(f"maybay/{i}")
     image = pygame.transform.scale(image, (image.get_width() // 3, image.get_height() // 3))
     animation.append(image)
 
